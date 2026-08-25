@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 20rem;
+}
+
+html,
+body {
+  height: 100%;
+}
