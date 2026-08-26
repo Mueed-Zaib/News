@@ -19,7 +19,7 @@ const Navbar = () => {
               <Link to="/Search">Search</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Business
+              <Link to="/Business">Business</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
               Technology
