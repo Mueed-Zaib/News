@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setmenu] = useState(false);
@@ -12,10 +13,10 @@ const Navbar = () => {
         <div className="w-[75%] xs:w-[50%] flex items-center  justify-end">
           <div className="flex gap-5 md:hidden sm:hidden xs:hidden lg:flex">
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Home
+              <Link to="/">Home</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Search
+              <Link to="/Search">Search</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
               Business
