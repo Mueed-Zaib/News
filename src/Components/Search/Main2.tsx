@@ -32,6 +32,7 @@ const Main2 = () => {
           <>
             <img
               src={mainArticle.urlToImage}
+              alt="Article Thumbnail"
               className="w-full h-full object-cover rounded"
             />
           </>

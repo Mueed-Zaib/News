@@ -22,19 +22,19 @@ const Navbar = () => {
               <Link to="/Business">Business</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Technology
+              <Link to="/Technology">Technology</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Sports
+              <Link to="/Sport">Sport</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Entertainment
+              <Link to="/Entertainment">Entertainment</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Health
+              <Link to="/Health">Health</Link>
             </p>
             <p className="hover:text-amber-300 transition cursor-pointer">
-              Science
+              <Link to="/Science">Science</Link>
             </p>
           </div>
           <button onClick={() => setmenu(!menu)} className="lg:hidden md:flex">
@@ -44,14 +44,34 @@ const Navbar = () => {
       </div>
       {menu && (
         <div className="h-full w-full gap-3 p-3 text-xl text-white bg-black font-medium lg:hidden md:flex md:flex-col">
-          <p className=" cursor-pointer">Home</p>
-          <p className=" cursor-pointer">Search</p>
-          <p className=" cursor-pointer">Business</p>
-          <p className=" cursor-pointer">Technology</p>
-          <p className=" cursor-pointer">Sports</p>
-          <p className=" cursor-pointer">Entertainment</p>
-          <p className=" cursor-pointer">Health</p>
-          <p className=" cursor-pointer">Science</p>
+          <p className=" cursor-pointer">
+            <Link to="/">Home</Link>
+          </p>
+          <p className=" cursor-pointer">
+            {" "}
+            <Link to="/Search">Search</Link>
+          </p>
+          <p className=" cursor-pointer">
+            <Link to="/Business">Business</Link>
+          </p>
+          <p className=" cursor-pointer">
+            <Link to="/Technology">Technology</Link>
+          </p>
+          <p className=" cursor-pointer">
+            {" "}
+            <Link to="/Sport">Sport</Link>
+          </p>
+          <p className=" cursor-pointer">
+            <Link to="/Entertainment">Entertainment</Link>
+          </p>
+          <p className=" cursor-pointer">
+            {" "}
+            <Link to="/Health">Health</Link>
+          </p>
+          <p className=" cursor-pointer">
+            {" "}
+            <Link to="/Science">Science</Link>
+          </p>
         </div>
       )}
     </>

@@ -8,7 +8,7 @@ const Main3 = () => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`,
+          `https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=${API_KEY}`,
         );
 
         if (!response.ok) {

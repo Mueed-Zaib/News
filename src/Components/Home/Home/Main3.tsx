@@ -21,7 +21,6 @@ const Main3 = () => {
         console.log(error);
       }
     };
-    console.log(data);
     getData();
   }, []);
 
