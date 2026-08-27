@@ -64,9 +64,11 @@ const Main2 = () => {
             />
             <>
               <span className=" font-bold p-5 h-[10%] ">August 25, 2026</span>
-              <h2 className="font-bold p-5 h-[15%]">{article.title}</h2>
+              <h2 className="line-clamp-2 font-bold px-5">{article.title}</h2>
 
-              <p className="text-sm p-5 h-[15%]">{article.description}</p>
+              <p className="line-clamp-2 px-5 text-sm mt-3">
+                {article.description}
+              </p>
             </>
           </div>
         ))}
