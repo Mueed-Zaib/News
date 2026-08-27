@@ -7,8 +7,10 @@ const Navbar = () => {
     <>
       <div className="bg-black p-4 w-full text-white text-2xl flex items-center justify-between  ">
         <div className=" w-[25%] xs:w-[50%] font-bold">
-          <span>News</span>
-          <span className="text-amber-300"> App</span>
+          <Link to="/">
+            <span>News</span>
+            <span className="text-amber-300"> App</span>
+          </Link>
         </div>
         <div className="w-[75%] xs:w-[50%] flex items-center  justify-end">
           <div className="flex gap-5 md:hidden sm:hidden xs:hidden lg:flex">

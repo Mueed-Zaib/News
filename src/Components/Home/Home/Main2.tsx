@@ -20,7 +20,6 @@ const Main2 = () => {
   );
 
   const mainArticle = data?.articles[0];
-
   const otherArticles = data?.articles.slice(1);
 
   return (
