@@ -4,11 +4,13 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 const Main3 = () => {
   const [data, setData] = useState<any>(null);
+  // const [index, setIndex] = useState(1);
+
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`,
+          `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY}&pageSize=6`,
         );
 
         if (!response.ok) {
@@ -21,15 +23,16 @@ const Main3 = () => {
         console.log(error);
       }
     };
+
     getData();
   }, []);
 
   const otherArticles = data?.articles.slice(1);
   return (
     <div className="h-full w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {otherArticles?.map((article: any, index: number) => (
+      {otherArticles?.map((article: any, idx: number) => (
         <div
-          key={index}
+          key={idx}
           className="h-full w-full pb-8 flex flex-col justify-evenly"
         >
           <img

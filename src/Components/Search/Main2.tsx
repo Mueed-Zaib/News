@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 const API_KEY = import.meta.env.VITE_API_KEY;
 const Main2 = () => {
   const [data, setData] = useState<any>(null);
+
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`,
+          `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${API_KEY}`,
         );
 
         if (!response.ok) {
