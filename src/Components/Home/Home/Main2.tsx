@@ -39,7 +39,13 @@ const Main2 = () => {
         <div className="lg:w-[50%] md:w-full xs:w-full flex justify-center flex-col">
           {mainArticle && (
             <>
-              <span className=" font-bold mt-3">August 25, 2026</span>
+              <span className="font-bold mt-3">
+                {new Date(mainArticle.publishedAt).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </span>
               <h1 className="text-2xl font-bold mt-3">{mainArticle.title}</h1>
 
               <p className="mt-2">{mainArticle.description}</p>
@@ -58,9 +64,14 @@ const Main2 = () => {
               className="w-full h-[60%] object-cover rounded"
             />
             <>
-              <span className=" font-bold p-5 h-[10%] ">August 25, 2026</span>
+              <span className="font-bold p-5 h-[10%]">
+                {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </span>
               <h2 className="line-clamp-2 font-bold px-5 ">{article.title}</h2>
-
               <p className="line-clamp-2 px-5 text-sm mt-3">
                 {article.description}
               </p>
