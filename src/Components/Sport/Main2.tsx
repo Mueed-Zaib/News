@@ -4,9 +4,12 @@ const Main2 = () => {
   const [data, setData] = useState<any>(null);
   const [index, setIndex] = useState(1);
 
+  const pageSize: number = 5;
+  const totalPages: number = Math.ceil((data?.totalResults || 0) / pageSize);
+
   const getData = async () => {
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&category=sport&apiKey=${API_KEY}&page=${index}&pageSize=5`,
+      `https://newsapi.org/v2/top-headlines?country=us&category=sport&apiKey=${API_KEY}&page=${index}&pageSize=${pageSize}`,
     );
     const result = await response.json();
     setData(result);
@@ -81,37 +84,37 @@ const Main2 = () => {
         ))}
       </div>
       <div className="p-5 font-bold text-black">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-3 mt-5">
+        <div className="flex flex-col md:flex-row sm:flex-row lg:flex-row items-center justify-center gap-3 mt-5">
           <button
-            onClick={() => {
-              if (index > 1) setIndex(index - 1);
-            }}
-            className="px-10 py-3 cursor-pointer active:scale-95 bg-amber-300 rounded-2xl"
+            disabled={index === 1}
+            onClick={() => setIndex(index - 1)}
+            className="px-10 py-3 cursor-pointer active:scale-95 bg-amber-300 rounded-2xl disabled:opacity-50"
           >
             Prev
           </button>
 
           <div className="flex flex-wrap justify-center gap-2">
-            {[1, 2, 3, 4, 5, 6].map((page) => (
-              <button
-                key={page}
-                onClick={() => setIndex(page)}
-                className={`px-4 py-2 rounded ${
-                  index === page
-                    ? "bg-amber-400 text-white"
-                    : "bg-gray-200 text-black"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (page: number) => (
+                <button
+                  key={page}
+                  onClick={() => setIndex(page)}
+                  className={`px-4 py-2 rounded ${
+                    index === page
+                      ? "bg-amber-400 text-white"
+                      : "bg-gray-200 text-black"
+                  }`}
+                >
+                  {page}
+                </button>
+              ),
+            )}
           </div>
 
           <button
-            onClick={() => {
-              if (index < 5) setIndex(index + 1);
-            }}
-            className="px-10 py-3 cursor-pointer active:scale-95 bg-amber-300 rounded-2xl"
+            disabled={index === totalPages}
+            onClick={() => setIndex(index + 1)}
+            className="px-10 py-3 cursor-pointer active:scale-95 bg-amber-300 rounded-2xl disabled:opacity-50"
           >
             Next
           </button>
