@@ -104,19 +104,12 @@ const Main1 = () => {
       </div>
 
       {data && data.articles?.length === 0 && (
-        // <p className="text-center mt-10 text-gray-500 text-lg">
-        //   No articles found
-        // </p>
-        //       const noArticle = () => {
-        // return (
         <div className="w-full mt-10 gap-5 flex flex-col justify-center items-center">
           <p>No article found</p>
           <button className="p-2 rounded bg-amber-400">
             <Link to="/">Back Home</Link>
           </button>
         </div>
-        // );
-        // };
       )}
 
       {mainArticle && (

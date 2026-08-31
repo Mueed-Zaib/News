@@ -80,8 +80,8 @@ const Main2 = () => {
           </div>
         ))}
       </div>
-      <div className="p-5   font-bold text-black">
-        <div className="gap-5 flex justify-center mt-5">
+      <div className="p-5 font-bold text-black">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-3 mt-5">
           <button
             onClick={() => {
               if (index > 1) setIndex(index - 1);
@@ -90,19 +90,22 @@ const Main2 = () => {
           >
             Prev
           </button>
-          {[1, 2, 3, 4, 5, 6].map((page) => (
-            <button
-              key={page}
-              onClick={() => setIndex(page)}
-              className={`px-4 py-2 rounded ${
-                index === page
-                  ? "bg-amber-400 text-white"
-                  : "bg-gray-200 text-black"
-              }`}
-            >
-              {page}
-            </button>
-          ))}
+
+          <div className="flex flex-wrap justify-center gap-2">
+            {[1, 2, 3, 4, 5, 6].map((page) => (
+              <button
+                key={page}
+                onClick={() => setIndex(page)}
+                className={`px-4 py-2 rounded ${
+                  index === page
+                    ? "bg-amber-400 text-white"
+                    : "bg-gray-200 text-black"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
 
           <button
             onClick={() => {
